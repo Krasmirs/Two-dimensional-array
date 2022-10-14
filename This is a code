@@ -8,15 +8,15 @@ int main() {
 	srand(time(NULL));
 	setlocale(LC_ALL, "Rusian");
 	int rows = 20, cols = 10;
-	
-	int** arr = new int*[rows];
+
+	int** arr = new int* [rows];
 	for (int i = 0; i < rows; i++)
 	{
 		arr[i] = new int[cols];
 	}
-	for (int i = 0; i < rows;++i)
+	for (int i = 0; i < rows; ++i)//This loop will go through the columns
 	{
-		for (int d = 0; d < cols; )	// The loop generates a random number that is not yet in the array
+		for (int d = 0; d < cols; )	// This loop will go through the lines
 		{
 
 			bool proverka = false;
@@ -27,7 +27,7 @@ int main() {
 					proverka = true;
 					break;
 				}
-				
+
 
 			}
 			if (!proverka)       //If the number is unique, write to the array
@@ -35,7 +35,7 @@ int main() {
 				arr[i][d] = randnum;
 				d++;
 			}
-			
+
 		}
 
 	}
@@ -48,11 +48,11 @@ int main() {
 		cout << endl;
 	}
 	int minNum = arr[0][0];
-	for (int i = 0; i <rows ; i++)
+	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < cols; j++)
 		{
-			if (arr[i][j]< minNum)
+			if (arr[i][j] < minNum)
 			{
 				minNum = arr[i][j];
 			}
